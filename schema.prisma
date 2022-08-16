@@ -12,20 +12,42 @@ generator client {
   output   = "node_modules/.prisma/client"
 }
 
-model Task {
-  id           String    @id @default(cuid())
-  label        String    @default("")
-  priority     String?
-  isComplete   Boolean   @default(false)
-  assignedTo   Person?   @relation("Task_assignedTo", fields: [assignedToId], references: [id])
-  assignedToId String?   @map("assignedTo")
-  finishBy     DateTime?
-
-  @@index([assignedToId])
+model Widget {
+  id                     String       @id @default(cuid())
+  canonicalId            String       @unique @default("")
+  type                   String
+  version                Int
+  data                   String?
+  from_PageWidget_widget PageWidget[] @relation("PageWidget_widget")
 }
 
-model Person {
-  id    String @id @default(cuid())
-  name  String @unique @default("")
-  tasks Task[] @relation("Task_assignedTo")
+model PageWidget {
+  id                String  @id @default(cuid())
+  container_classes String  @default("")
+  order             Int
+  widget            Widget? @relation("PageWidget_widget", fields: [widgetId], references: [id])
+  widgetId          String? @map("widget")
+
+  @@index([widgetId])
+}
+
+model Page {
+  id                      String          @id @default(cuid())
+  canonicalId             String          @unique @default("")
+  title                   String          @default("")
+  version                 Int
+  styles                  String          @default("")
+  from_PublishedPage_page PublishedPage[] @relation("PublishedPage_page")
+}
+
+model PublishedPage {
+  id          String    @id @default(cuid())
+  url         String    @unique @default("")
+  contentHash String    @default("")
+  template    String
+  publishTime DateTime?
+  page        Page?     @relation("PublishedPage_page", fields: [pageId], references: [id])
+  pageId      String?   @map("page")
+
+  @@index([pageId])
 }
