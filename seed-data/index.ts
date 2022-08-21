@@ -1,53 +1,26 @@
-import { persons, tasks } from './data';
+import { seedWidgets } from './data';
+import { WidgetProps } from './types';
 import { Context } from '.keystone/types';
 
-type PersonProps = {
-  name: string;
-};
-
-type TaskProps = {
-  label: string;
-  isComplete: boolean;
-  finishBy: string;
-  assignedTo: string;
-};
 
 export async function insertSeedData(context: Context) {
   console.log(`🌱 Inserting seed data`);
 
-  const createPerson = async (personData: PersonProps) => {
-    let person = await context.query.Person.findOne({
-      where: { name: personData.name },
+  const createTask = async (widgetData: WidgetProps) => {
+    let persons = await context.query.Widget.findMany({
+      where: { canonicalId: { equals: widgetData.canonicalId } },
       query: 'id',
     });
 
-    if (!person) {
-      person = await context.query.Person.createOne({
-        data: personData,
-        query: 'id',
-      });
-    }
-  };
-
-  const createTask = async (taskData: TaskProps) => {
-    let persons = await context.query.Person.findMany({
-      where: { name: { equals: taskData.assignedTo } },
-      query: 'id',
-    });
-
-    await context.query.Task.createOne({
-      data: { ...taskData, assignedTo: { connect: { id: persons[0].id } } },
+    await context.query.Widget.createOne({
+      data: { ...widgetData },
       query: 'id',
     });
   };
 
-  for (const person of persons) {
-    console.log(`👩 Adding person: ${person.name}`);
-    await createPerson(person);
-  }
-  for (const task of tasks) {
-    console.log(`🔘 Adding task: ${task.label}`);
-    await createTask(task);
+  for (const widget of seedWidgets) {
+    console.log(`🔘 Adding widget: ${widget.canonicalId}`);
+    await createTask(widget);
   }
 
   console.log(`✅ Seed data inserted`);

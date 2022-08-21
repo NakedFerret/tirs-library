@@ -1,37 +1,38 @@
-## Base Project - Task Manager
 
-This base project implements a simple **Task Management** app, with `Tasks` and `People` who can be assigned to tasks.
-
-Use it as a starting place for learning how to use Keystone.
 
 ## Instructions
-
-To run this project, clone the Keystone repository locally, run `yarn` at the root of the repository then navigate to this directory and run:
-
-```shell
-yarn dev
-```
-
-This will start Keystone’s Admin UI at [localhost:3000](http://localhost:3000), where you can add items to an empty database.
-
-You can also access Keystone’s GraphQL Playground at [localhost:3000/api/graphql](http://localhost:3000/api/graphql) to explore the GraphQL API, and run [queries](https://keystonejs.com/docs/guides/filters) and [mutations](https://keystonejs.com/docs/apis/graphql#mutations) on your data.
-
-Congratulations, you’re now up and running with Keystone! 🚀
-
-### Optional: add sample data
-
-This example includes sample data. To add it to your database:
 
 1. Ensure you’ve initialised your project with `yarn dev` at least once.
 2. Run `yarn seed-data`. This will populate your database with sample content.
 3. Run `yarn dev` again to startup Admin UI with sample data in place.
 
-## Next steps
 
-Experiment with the code in this example to see how Keystone works, familiarise yourself with the Admin UI, and learn about the GraphQL Playground.
 
-When you’ve got the hang of this base project, try a [feature project](../) to learn Keystone’s advanced features and take your knowledge to the next level.
+## TODO
 
-## Try it out in CodeSandbox 🧪
+MVP
+- [x] Define schema
+- [x] Seed some widget data
+- [] Create a markdown type widget to hold markdown text
+- [] Create a replacement admin page for page that renders a plain bytemd document
+- [] Integrate bytemd doc with markdown widget
+- [] Integrate bytemd doc with recipe widget
+- [] Create publishing pipeline that renders html from a page + URL
+- [] Integrate sending rendered HTML to object store
+- [] Implement default layout for page
+- [] Deploy frontend server to digital ocean VPS
+- [] Deploy DB (either postgres in plain VPS or replicated sqlite3)
+- [] Implement webserver that displays page from URL
 
-You can play with this example online in a web browser using the free [codesandbox.io](https://codesandbox.io/) service. To launch this example, open the URL <https://githubbox.com/keystonejs/keystone/tree/main/examples/task-manager>. You can also fork this sandbox to make your own changes.
+0.1.0
+- [] Integrate hashing into publishing pipeline to prevent re-doing work
+- [] Allow updating page/widget after initial creation, while preserving old pages
+- [] Do any schema changes as necessary
+- [] #community-work Write 10 short articles/pages
+- [] #community-work Get feedback from Tir's Library
+
+0.2.0
+- [] #community-work Implement access control for publishing
+- [] #community-work Deploy admin to vps
+- [] #community-work Implement auth for admin page
+
