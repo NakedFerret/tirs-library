@@ -13,8 +13,10 @@
 MVP
 - [x] Define schema
 - [x] Seed some widget data
-- [] Create a markdown type widget to hold markdown text
-- [] Create a replacement admin page for page that renders a plain bytemd document
+- [] Create a plain MDsveX component with one widget
+- [] Create a text type widget to hold the MDsveX component
+  - https://www.chrsjxn.io/svelte/dynamic-imports
+- [] Create a replacement admin page for page that renders a plain MDsveX document
 - [] Integrate bytemd doc with markdown widget
 - [] Integrate bytemd doc with recipe widget
 - [] Create publishing pipeline that renders html from a page + URL
