@@ -1,8 +1,19 @@
 additionalRepositories:
   - url: https://github.com/NakedFerret/tirs-widgets
 
+vscode:
+  extensions:
+    - svelte.svelte-vscode
+
 tasks:
-  - init: yarn install
+  - name: Keystone Admin
+    init: yarn install
     command: yarn dev
+
+  - name: Widgets library
+    init: |
+      cd ../tirs-widgets
+      npm install
+    command: npm run dev
 
 
