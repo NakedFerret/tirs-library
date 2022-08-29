@@ -14,6 +14,8 @@ tasks:
     init: |
       cd ../tirs-widgets
       npm install
-    command: npm run dev
+    command: |
+      cd ../tirs-widgets
+      npm run dev
 
 
