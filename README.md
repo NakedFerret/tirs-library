@@ -13,7 +13,8 @@
 MVP
 - [x] Define schema
 - [x] Seed some widget data
-- [] Create a plain MDsveX component with one widget
+- [x] Create a MDsevX REPL component
+- [] Export the components and workers 
 - [] Create a text type widget to hold the MDsveX component
   - https://www.chrsjxn.io/svelte/dynamic-imports
 - [] Create a replacement admin page for page that renders a plain MDsveX document
