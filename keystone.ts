@@ -14,4 +14,7 @@ export default config({
     },
   },
   lists,
+  server: {
+    port: Number(process.env.PORT) || 3000,
+  },
 });
