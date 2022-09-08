@@ -14,7 +14,10 @@ MVP
 - [x] Define schema
 - [x] Seed some widget data
 - [x] Create a MDsevX REPL component
-- [] Export the components and workers 
+- [] Export the components and workers
+  https://medium.com/swlh/npm-new-package-json-exports-field-1a7d1f489ccf
+  https://nodejs.org/api/packages.html#packages_exports
+  https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557
 - [] Create a text type widget to hold the MDsveX component
   - https://www.chrsjxn.io/svelte/dynamic-imports
 - [] Create a replacement admin page for page that renders a plain MDsveX document
