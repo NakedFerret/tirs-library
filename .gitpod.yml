@@ -8,14 +8,16 @@ vscode:
 tasks:
   - name: Keystone Admin
     init: yarn install
-    command: yarn dev
+    command: |
+      cd /workspace/tirs-library
+      yarn dev
 
   - name: Widgets library
     init: |
-      cd ../tirs-widgets
+      cd /workspace/tirs-widgets
       npm install
     command: |
-      cd ../tirs-widgets
+      cd /workspace/tirs-widgets
       npm run dev
 
 
