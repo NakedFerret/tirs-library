@@ -16,5 +16,13 @@ export default config({
   lists,
   server: {
     port: Number(process.env.PORT) || 3000,
+    extendExpressApp(app) {
+      app.get('/_script/bundle.js', (req, res) => {
+        const cwd = process.cwd();
+        res.sendFile('bundler.js', {
+          root: (cwd + '/node_modules/tirs-widgets/public/workers')
+        });
+      });
+    },
   },
 });
