@@ -10,7 +10,8 @@
     "seed-data": "keystone --seed-data"
   },
   "dependencies": {
-    "@keystone-6/core": "^2.0.0"
+    "@keystone-6/core": "^2.0.0",
+    "tirs-widgets": "https://github.com/NakedFerret/tirs-widgets#0.0.1-beta1"
   },
   "devDependencies": {
     "typescript": "^4.7.4"
