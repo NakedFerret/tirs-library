@@ -6,11 +6,11 @@ vscode:
     - svelte.svelte-vscode
 
 tasks:
-  - name: Keystone Admin
-    init: yarn install
+  - name: Strapi admin
+    init: npm install
     command: |
       cd /workspace/tirs-library
-      yarn dev
+      npm run develop
 
   - name: Widgets library
     init: |
