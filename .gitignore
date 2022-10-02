@@ -2,3 +2,15 @@ node_modules/
 .keystone
 *.db
 *.db-journal
+
+
+############################
+# Strapi
+############################
+
+.env
+license.txt
+exports
+*.cache
+build
+.strapi-updater.json

@@ -1,44 +1,57 @@
+# 🚀 Getting started with Strapi
 
+Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html) (CLI) which lets you scaffold and manage your project in seconds.
 
-## Instructions
+### `develop`
 
-1. Ensure you’ve initialised your project with `yarn dev` at least once.
-2. Run `yarn seed-data`. This will populate your database with sample content.
-3. Run `yarn dev` again to startup Admin UI with sample data in place.
+Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-develop)
 
+```
+npm run develop
+# or
+yarn develop
+```
 
+### `start`
 
-## TODO
+Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-start)
 
-MVP
-- [x] Define schema
-- [x] Seed some widget data
-- [x] Create a MDsevX REPL component
-- [] Export the components and workers
-  https://medium.com/swlh/npm-new-package-json-exports-field-1a7d1f489ccf
-  https://nodejs.org/api/packages.html#packages_exports
-  https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557
-- [] Create a text type widget to hold the MDsveX component
-  - https://www.chrsjxn.io/svelte/dynamic-imports
-- [] Create a replacement admin page for page that renders a plain MDsveX document
-- [] Integrate bytemd doc with markdown widget
-- [] Integrate bytemd doc with recipe widget
-- [] Create publishing pipeline that renders html from a page + URL
-- [] Integrate sending rendered HTML to object store
-- [] Implement default layout for page
-- [] Deploy frontend server to digital ocean VPS
-- [] Deploy DB (either postgres in plain VPS or replicated sqlite3)
-- [] Implement webserver that displays page from URL
+```
+npm run start
+# or
+yarn start
+```
 
-0.1.0
-- [] Integrate hashing into publishing pipeline to prevent re-doing work
-- [] Allow updating page/widget after initial creation, while preserving old pages
-- [] Do any schema changes as necessary
-- [] #community-work Write 10 short articles/pages
-- [] #community-work Get feedback from Tir's Library
+### `build`
 
-0.2.0
-- [] #community-work Implement access control for publishing
-- [] #community-work Deploy admin to vps
-- [] #community-work Implement auth for admin page
+Build your admin panel. [Learn more](https://docs.strapi.io/developer-docs/latest/developer-resources/cli/CLI.html#strapi-build)
 
+```
+npm run build
+# or
+yarn build
+```
+
+## ⚙️ Deployment
+
+Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
+
+## 📚 Learn more
+
+- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
+- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
+- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
+- [Strapi blog](https://docs.strapi.io) - Official Strapi blog containing articles made by the Strapi team and the community.
+- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+
+Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+
+## ✨ Community
+
+- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
+- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
+- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+
+---
+
+<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
