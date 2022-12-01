@@ -13,5 +13,3 @@ tasks:
   - init: npm install
     command: npm run dev
   - init: npx prisma migrate reset --force
-
-
