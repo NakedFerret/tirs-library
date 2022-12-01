@@ -7,9 +7,11 @@ image:
 vscode:
   extensions:
     - svelte.svelte-vscode
+    - Prisma.prisma
 
 tasks:
   - init: npm install
     command: npm run dev
+  - init: echo  'DROP DATABASE IF EXISTS tirs_db_dev;CREATE DATABASE tirs_db_dev;' | psql
 
 
