@@ -11,7 +11,11 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
+  "prisma": {
+    "seed": "ts-node-esm prisma/seed.ts"
+  },
 	"devDependencies": {
+		"@faker-js/faker": "^7.6.0",
 		"@fontsource/fira-mono": "^4.5.0",
 		"@neoconfetti/svelte": "^1.0.0",
 		"@sveltejs/adapter-auto": "next",
@@ -22,12 +26,14 @@
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
+		"factory.ts": "^1.3.0",
 		"prettier": "^2.6.2",
 		"prettier-plugin-svelte": "^2.7.0",
 		"prisma": "^4.7.0",
 		"svelte": "^3.46.0",
 		"svelte-check": "^2.7.1",
 		"svelte-preprocess": "^4.10.6",
+		"ts-node": "^10.9.1",
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
 		"vite": "^3.1.0",

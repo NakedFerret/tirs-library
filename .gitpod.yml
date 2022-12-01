@@ -12,6 +12,6 @@ vscode:
 tasks:
   - init: npm install
     command: npm run dev
-  - init: echo  'DROP DATABASE IF EXISTS tirs_db_dev;CREATE DATABASE tirs_db_dev;' | psql
+  - init: npx prisma migrate reset --force
 
 
