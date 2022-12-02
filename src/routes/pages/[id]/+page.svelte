@@ -3,10 +3,16 @@
   export let data: PageData;
 
   const { page } = data;
+  const { content: sections, title } = page;
 </script>
 
 <h1> Page #{page?.id} </h1>
+<h1> {title} </h1>
 
 <div>
-  {page?.content}
+  {#each sections as s}
+    <p>
+      {s}
+    </p>
+  {/each}
 </div>

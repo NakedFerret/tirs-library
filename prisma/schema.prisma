@@ -11,14 +11,15 @@ datasource db {
 }
 
 model Page {
-  id        BigInt  @id @default(autoincrement())
-  content   String
-  author    Author  @relation(fields: [authorId], references: [id])
-  authorId  BigInt
+  id       BigInt   @id @default(autoincrement())
+  content  String[] @default([])
+  title    String
+  author   Author   @relation(fields: [authorId], references: [id])
+  authorId BigInt
 }
 
 model Author {
-  id      BigInt      @id @default(autoincrement())
-  handle  String
-  pages   Page[]
+  id     BigInt @id @default(autoincrement())
+  handle String
+  pages  Page[]
 }

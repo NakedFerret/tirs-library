@@ -1,7 +1,8 @@
 -- CreateTable
 CREATE TABLE "Page" (
     "id" BIGSERIAL NOT NULL,
-    "content" TEXT NOT NULL,
+    "content" TEXT[] DEFAULT ARRAY[]::TEXT[],
+    "title" TEXT NOT NULL,
     "authorId" BIGINT NOT NULL,
 
     CONSTRAINT "Page_pkey" PRIMARY KEY ("id")

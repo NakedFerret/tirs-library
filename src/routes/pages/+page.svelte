@@ -1,10 +1,8 @@
 <script lang="ts">
-  import type { PageData } from './$types';
+  import type { PageData } from "./$types";
   export let data: PageData;
   const { pages } = data;
-
 </script>
-
 
 <svelte:head>
   <title>About</title>
@@ -13,8 +11,7 @@
 
 <h1>All Pages</h1>
 <div class="">
-  
-  {#each pages as page (page.id)}
+  {#each pages as page}
     <div class="pv2 bt flex">
       <div class="w-80">{page.content.slice(0, 500)}</div>
       <div class="w-20 ml3">
@@ -23,4 +20,3 @@
     </div>
   {/each}
 </div>
- 

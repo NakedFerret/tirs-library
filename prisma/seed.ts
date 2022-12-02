@@ -13,11 +13,26 @@ async function main() {
         pages: {
           createMany: {
             data: [
-              { content: faker.lorem.paragraphs(10, "\n\n") },
-              { content: faker.lorem.paragraphs(10, "\n\n") },
-              { content: faker.lorem.paragraphs(10, "\n\n") },
-              { content: faker.lorem.paragraphs(10, "\n\n") },
-              { content: faker.lorem.paragraphs(10, "\n\n") },
+              { 
+                title: faker.lorem.words(5),
+                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+              },
+              { 
+                title: faker.lorem.words(5),
+                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+              },
+              { 
+                title: faker.lorem.words(5),
+                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+              },
+              { 
+                title: faker.lorem.words(5),
+                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+              },
+              { 
+                title: faker.lorem.words(5),
+                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+              },
             ],
           },
         },
