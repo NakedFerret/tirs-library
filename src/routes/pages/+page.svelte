@@ -11,14 +11,16 @@
   <meta name="description" content="About this app" />
 </svelte:head>
 
-<div>
-  <h1>All Pages</h1>
-  <ul>
-    {#each pages as page (page.id)}
-      <li>
-        {page.id} : {page.content.slice(0, 50)}...
-      </li>
-    {/each}
-  </ul>
+<h1>All Pages</h1>
+<div class="">
+  
+  {#each pages as page (page.id)}
+    <div class="pv2 bt flex">
+      <div class="w-80">{page.content.slice(0, 500)}</div>
+      <div class="w-20 ml3">
+        <a class="f4" href="/pages/{page.id}">Open Page #{page.id}</a>
+      </div>
+    </div>
+  {/each}
 </div>
  

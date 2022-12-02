@@ -1,5 +1,3 @@
-import { dev } from "$app/environment";
-import type { PageServerLoad } from './$types';
 import { PrismaClient } from "@prisma/client";
 
 export async function load() {
