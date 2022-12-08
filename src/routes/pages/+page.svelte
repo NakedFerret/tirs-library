@@ -13,7 +13,7 @@
 <div class="">
   {#each pages as page}
     <div class="pv2 bt flex">
-      <div class="w-80">{page.content.slice(0, 500)}</div>
+      <div class="w-80">{page.content.slice(0, 2).join(" ")}</div>
       <div class="w-20 ml3">
         <a class="f4" href="/pages/{page.id}">Open Page #{page.id}</a>
       </div>

@@ -1,37 +1,38 @@
 import { PrismaClient } from "@prisma/client";
-import { faker } from "@faker-js/faker";
+import Chance from 'chance';
 
 const prisma = new PrismaClient();
 
 const NUM_OF_TEST_AUTHORS = 10;
 
 async function main() {
+  const chance = new Chance();
   for (let authorCount = 1; authorCount <= NUM_OF_TEST_AUTHORS; authorCount++) {
     await prisma.author.create({
       data: {
-        handle: faker.lorem.words(5),
+        handle: chance.twitter(),
         pages: {
           createMany: {
             data: [
               { 
-                title: faker.lorem.words(5),
-                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+                title: chance.sentence(),
+                content: chance.n(chance.paragraph, 5),
               },
               { 
-                title: faker.lorem.words(5),
-                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+                title: chance.sentence(),
+                content: chance.n(chance.paragraph, 5),
               },
               { 
-                title: faker.lorem.words(5),
-                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+                title: chance.sentence(),
+                content: chance.n(chance.paragraph, 5),
               },
               { 
-                title: faker.lorem.words(5),
-                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+                title: chance.sentence(),
+                content: chance.n(chance.paragraph, 5),
               },
               { 
-                title: faker.lorem.words(5),
-                content: faker.lorem.paragraphs(10, "🌊").split('🌊'),
+                title: chance.sentence(),
+                content: chance.n(chance.paragraph, 5),
               },
             ],
           },
