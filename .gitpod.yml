@@ -18,16 +18,15 @@ tasks:
     init: |
       gp sync-await install-done
       gp sync-await db-done
-    command:
-      npm run dev
+    command: npm run dev
 
   - name: Database
     init: |
       gp sync-await install-done
       npx prisma migrate reset --force
       gp sync-done db-done
-      
-  - name: Prisma studio 
+
+  - name: Prisma studio
     init: |
       gp sync-await db-done
     command: npx prisma studio

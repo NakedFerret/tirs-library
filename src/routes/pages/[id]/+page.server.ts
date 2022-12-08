@@ -1,6 +1,6 @@
 import type { PageServerLoad } from "./$types";
 import { PrismaClient } from "@prisma/client";
-import { error } from '@sveltejs/kit';
+import { error } from "@sveltejs/kit";
 
 export async function load({ params }: PageServerLoad) {
   const prisma = new PrismaClient();
@@ -12,10 +12,10 @@ export async function load({ params }: PageServerLoad) {
   });
 
   if (!page) {
-    throw error(404, 'Page is missing')
+    throw error(404, "Page is missing");
   }
 
   return {
-    page
+    page,
   };
 }

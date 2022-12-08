@@ -6,6 +6,6 @@ export async function load() {
   return {
     pages: await prisma.page.findMany({
       take: 20,
-    })
+    }),
   };
 }

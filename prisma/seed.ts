@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import Chance from 'chance';
+import Chance from "chance";
 
 const prisma = new PrismaClient();
 
@@ -14,23 +14,23 @@ async function main() {
         pages: {
           createMany: {
             data: [
-              { 
+              {
                 title: chance.sentence(),
                 content: chance.n(chance.paragraph, 5),
               },
-              { 
+              {
                 title: chance.sentence(),
                 content: chance.n(chance.paragraph, 5),
               },
-              { 
+              {
                 title: chance.sentence(),
                 content: chance.n(chance.paragraph, 5),
               },
-              { 
+              {
                 title: chance.sentence(),
                 content: chance.n(chance.paragraph, 5),
               },
-              { 
+              {
                 title: chance.sentence(),
                 content: chance.n(chance.paragraph, 5),
               },
