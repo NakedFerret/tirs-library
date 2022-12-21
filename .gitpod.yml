@@ -10,21 +10,29 @@ vscode:
     - Prisma.prisma
 
 tasks:
+  # Init S3 access
+  - init: |
+      sudo apt install -y rclone
+      mkdir -p ~/.config/rclone/
+      cp configs/rclone.conf ~/.config/rclone/rclone.conf
+      gp sync-done configs-done
+
   - init: |
       npm install
       gp sync-done install-done
+
+  - name: Database
+    init: |
+      gp sync-await install-done
+      gp sync-await configs-done
+      npx prisma migrate reset --force
+      gp sync-done db-done
 
   - name: Server
     init: |
       gp sync-await install-done
       gp sync-await db-done
     command: npm run dev
-
-  - name: Database
-    init: |
-      gp sync-await install-done
-      npx prisma migrate reset --force
-      gp sync-done db-done
 
   - name: Prisma studio
     init: |
